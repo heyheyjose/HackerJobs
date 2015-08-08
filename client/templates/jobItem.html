@@ -1,6 +1,40 @@
 <template name="jobItem">
-	<div class="job-item">
-		<h4>{{author}} <small>{{time}}</small></h4>
-		<p>{{text}}</p>
-	</div>
+    <div class="job-item">
+        <h4>{{author}}
+            <small>{{time}}</small>
+        </h4>
+
+        <div class="attributes">
+            <div class="is-remote">
+				{{#if isRemote}}
+                    <img src="/img/checkmark.png"/>
+				{{else}}
+                    <img src="/img/delete.png"/>
+				{{/if}}
+                <span>Remote</span>
+            </div>
+
+            <div class="is-full-time">
+				{{#if isFullTime}}
+                    <img src="/img/checkmark.png"/>
+				{{else}}
+                    <img src="/img/delete.png"/>
+				{{/if}}
+                <span>Full Time</span>
+            </div>
+
+            <div class="is-contract">
+				{{#if isContract}}
+                    <img src="/img/checkmark.png"/>
+				{{else}}
+                    <img src="/img/delete.png"/>
+				{{/if}}
+                <span>Contract</span>
+            </div>
+        </div>
+
+        <div class="raw-text">
+            <p>{{{text}}}</p>
+        </div>
+    </div>
 </template>

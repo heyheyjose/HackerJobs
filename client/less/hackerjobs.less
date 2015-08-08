@@ -23,11 +23,37 @@ header {
     }
 }
 
+.hide {
+    display:none !important;
+}
+
 .job-item {
     padding:15px;
     text-align:justify;
 
     small {
         margin-left:15px;
+    }
+
+    .attributes {
+        overflow:hidden;
+
+        .is-remote, .is-full-time, .is-contract {
+            overflow: hidden;
+            float:left;
+            margin-right:25px;
+
+            img {
+                float: left;
+                height: 22px;
+                margin-right:5px;
+            }
+
+            span {
+                display: block;
+                float: left;
+                line-height: 26px;
+            }
+        }
     }
 }
