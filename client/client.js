@@ -1,3 +1,7 @@
 Template.body.helpers({
-    jobs: Job.find({})
+    jobs: Job.find({}),
+
+    formattedTime: function () {
+        return moment(this.time).format('ll');
+    }
 });
