@@ -1,4 +1,4 @@
-@nav-height:60px;
+@nav-height: 60px;
 
 body {
     background-color: #F0F0F0;
@@ -6,15 +6,15 @@ body {
 
 header {
     background-color: #EF6C00;
-    padding:0px 30px;
-    height:@nav-height;
+    padding: 0px 30px;
+    height: @nav-height;
 
     h1 {
         color: #FFF;
-        margin:0px;
-        font-weight:400;
+        margin: 0px;
+        font-weight: 400;
 
-        line-height:@nav-height;
+        line-height: @nav-height;
     }
 
     a {
@@ -24,64 +24,95 @@ header {
 }
 
 .hide {
-    display:none !important;
+    display: none !important;
+}
+
+form {
+    box-sizing: border-box;
+    padding:0px 10px 10px 10px;
+
+    h4 {
+        margin:25px 0px 0px 0px;
+    }
+
+    input[type=text] {
+        padding:4px;
+        width:100%;
+
+        &:focus {
+            outline:0;
+        }
+    }
+
+    .checkbox {
+        display:block;
+        float:left;
+        margin:5px 3px;
+    }
 }
 
 .job-item {
-    padding:30px 15px;
-    text-align:justify;
+    padding: 30px 15px;
+    text-align: justify;
 
     small {
-        margin-left:15px;
+        margin-left: 15px;
     }
 
     .attributes {
-        overflow:hidden;
+        overflow: hidden;
 
         .is-remote, .is-full-time, .is-part-time, .is-contract {
             overflow: hidden;
-            float:left;
-            margin-right:25px;
+            float: left;
+            margin-right: 25px;
 
             img {
                 float: left;
                 height: 18px;
-                margin-right:5px;
+                margin-right: 5px;
             }
 
             span {
                 display: block;
                 float: left;
                 line-height: 20px;
-                font-size:10pt;
+                font-size: 10pt;
             }
         }
     }
 
     .state {
-        font-size:11pt;
-        color:#444;
-        margin:5px 0px;
+        font-size: 11pt;
+        color: #444;
+        margin: 5px 0px;
 
     }
 
     #toggle-post {
-        display:block;
-        margin-top:22px;
+        display: block;
+        margin-top: 22px;
         text-decoration: none;
-        color:#EF6C00;
-        font-size:11pt;
+        color: #EF6C00;
+        font-size: 11pt;
 
-        cursor:pointer;
+        cursor: pointer;
 
         span {
-            display:inline-block;
-            width:35px;
+            display: inline-block;
+            width: 35px;
             text-align: right;
         }
     }
 
     .raw-text {
-        display:none;
+        display: none;
     }
+}
+
+hr.divider {
+    width: 95%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(50, 50, 50, 0), rgba(50, 50, 50, 0.15), rgba(50, 50, 50, 0));
 }
