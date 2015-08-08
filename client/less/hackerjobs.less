@@ -28,7 +28,7 @@ header {
 }
 
 .job-item {
-    padding:15px;
+    padding:30px 15px;
     text-align:justify;
 
     small {
@@ -38,21 +38,22 @@ header {
     .attributes {
         overflow:hidden;
 
-        .is-remote, .is-full-time, .is-contract {
+        .is-remote, .is-full-time, .is-part-time, .is-contract {
             overflow: hidden;
             float:left;
             margin-right:25px;
 
             img {
                 float: left;
-                height: 22px;
+                height: 18px;
                 margin-right:5px;
             }
 
             span {
                 display: block;
                 float: left;
-                line-height: 26px;
+                line-height: 20px;
+                font-size:10pt;
             }
         }
     }
@@ -65,9 +66,19 @@ header {
     }
 
     #toggle-post {
+        display:block;
+        margin-top:22px;
         text-decoration: none;
         color:#EF6C00;
         font-size:11pt;
+
+        cursor:pointer;
+
+        span {
+            display:inline-block;
+            width:35px;
+            text-align: right;
+        }
     }
 
     .raw-text {

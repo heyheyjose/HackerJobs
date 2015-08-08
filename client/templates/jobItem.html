@@ -1,9 +1,5 @@
 <template name="jobItem">
     <div class="job-item">
-        <h4>{{author}}
-            <small>{{time}}</small>
-        </h4>
-
         <div class="attributes">
             <div class="is-remote">
 				{{#if isRemote}}
@@ -23,6 +19,15 @@
                 <span>Full Time</span>
             </div>
 
+            <div class="is-part-time">
+				{{#if isPartTime}}
+                    <img src="/img/checkmark.png"/>
+				{{else}}
+                    <img src="/img/delete.png"/>
+				{{/if}}
+                <span>Part Time</span>
+            </div>
+
             <div class="is-contract">
 				{{#if isContract}}
                     <img src="/img/checkmark.png"/>
@@ -33,15 +38,26 @@
             </div>
         </div>
 
+        <!--<h4>{{author}}
+            <small>{{time}}</small>
+        </h4>-->
+
+		{{#if email}}
+            <p>
+                <span>Email: </span> {{email}}
+            </p>
+		{{/if}}
+
+        <p>{{time}}</p>
         <h5 class="state">{{getStates}}</h5>
 
-        <a href="#" id="toggle-post">
+        <a id="toggle-post">
             <span>Show</span> Hacker News Post
         </a>
+
         <div class="raw-text">
             <p>{{{text}}}</p>
         </div>
 
-        <hr />
     </div>
 </template>
