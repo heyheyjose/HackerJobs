@@ -1,6 +1,6 @@
 <template name="jobItem">
     <div class="job-item">
-        <h4>{{getStates}}
+        <h4>{{author}}
             <small>{{time}}</small>
         </h4>
 
@@ -33,8 +33,12 @@
             </div>
         </div>
 
+        <h5 class="state">{{getStates}}</h5>
+
         <div class="raw-text">
             <p>{{{text}}}</p>
         </div>
+
+        <hr />
     </div>
 </template>
