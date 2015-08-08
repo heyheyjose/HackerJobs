@@ -20,7 +20,9 @@ Meteor.startup(function () {
         }
     }
 
-    getJobs();
+    //if(!Job.find({}).fetch().length) {
+        getJobs();
+    //}
 
     /*SyncedCron.add({
         name: 'Gets all of the information from the hacker news posts',

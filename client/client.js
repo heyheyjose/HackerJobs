@@ -2,6 +2,13 @@ Template.body.helpers({
     jobs: Job.find({})
 });
 
+Template.searchForm.events({
+    'submit #search': function(e) {
+        e.preventDefault();
+        console.log(e);
+    }
+});
+
 Template.jobItem.helpers({
     getStates: function () {
         var stateCode = this.states[0];
