@@ -9,3 +9,10 @@ Template.jobItem.helpers({
         return States[stateCode];
     }
 });
+
+Template.jobItem.events({
+    'click #toggle-post': function(e) {
+        $(this).find('span').text('Hide');
+        $('.raw-text').toggle();
+    }
+});
