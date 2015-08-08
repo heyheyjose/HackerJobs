@@ -10,3 +10,5 @@ insecure
 less
 http
 momentjs:moment
+mrt:cron
+percolate:synced-cron

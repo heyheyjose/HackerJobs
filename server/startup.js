@@ -1,15 +1,30 @@
 Meteor.startup(function () {
-    //Job.remove({});
-	/*var api = new HackerNewsApi();
-    var kids = api.getItem('9996333').data.kids;
+    Job.remove({});
 
-    //For demo purposes it only gets the first 5 posts
-    for(var i = 0; i < 4; i++) {
+    function getComments() {
+        var api = new HackerNewsApi();
+        var kids = api.getItem('9996333').data.kids;
 
-        var kid = kids[i];
+        if (Comment.find({}).fetch().length === 0) {
+            kids.forEach(function (kid) {
+                api.getItem(kid, function (err, resp) {
+                    if (!err) {
+                        Comment.insert(resp.data);
+                    }
+                });
+            });
+        }
+    }
 
-        api.getItem(kid, function(err, resp) {
-            Job.insert(resp.data);
-        });
-    }*/
+    getComments();
+
+    /*SyncedCron.add({
+        name: 'Gets all of the information from the hacker news posts',
+        schedule: function (parser) {
+            return parser.text('every 1 minute');
+        },
+        job: getComments
+    });*/
+
+    //SyncedCron.start();
 });
