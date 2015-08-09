@@ -1,5 +1,6 @@
 Meteor.startup(function () {
     Job.remove({});
+    Language.remove({});
 
     var api = new HackerNewsApi();
 
@@ -22,8 +23,12 @@ Meteor.startup(function () {
 
     getJobs();
 
-    // dump programming languages into mongo collection
-    Language.insert(LanguageList);
+    if (Language.find({}).fetch().length === 0) {
+
+        // dump programming languages into mongo collection
+        Language.insert(LanguageList);
+    }
+
 
 
     /*SyncedCron.add({
