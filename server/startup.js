@@ -1,5 +1,6 @@
 Meteor.startup(function () {
     Job.remove({});
+    Skill.remove({});
 
     var api = new HackerNewsApi();
 
@@ -14,8 +15,8 @@ Meteor.startup(function () {
                     var job = api.commentToJob(resp.data);
                     if (job) {
 
-                        var result = Job.find({ id: job.id }).fetch();
-                        if(!result.length) {
+                        var result = Job.find({id: job.id}).fetch();
+                        if (!result.length) {
                             Job.insert(job);
                         }
                     }
@@ -30,8 +31,11 @@ Meteor.startup(function () {
 
     if (Skill.find({}).fetch().length === 0) {
 
-        // dump programming languages into mongo collection
-        //Skill.insert(skillList);
+        _.each(Skills, function (skill) {
+            Skill.insert([skill])
+
+        });
+
     }
 
     SyncedCron.add({
