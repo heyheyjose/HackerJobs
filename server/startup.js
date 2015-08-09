@@ -26,7 +26,7 @@ Meteor.startup(function () {
     if (Language.find({}).fetch().length === 0) {
 
         // dump programming languages into mongo collection
-        Language.insert(LanguageList);
+        Language.insert(skillList);
     }
 
 
