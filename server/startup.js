@@ -28,10 +28,10 @@ Meteor.startup(function () {
         getJobs();
     }
 
-    if (Language.find({}).fetch().length === 0) {
+    if (Skill.find({}).fetch().length === 0) {
 
         // dump programming languages into mongo collection
-        Language.insert(skillList);
+        //Skill.insert(skillList);
     }
 
     SyncedCron.add({
